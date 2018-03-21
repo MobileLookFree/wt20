@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Адаптивная статья</title>
+    <meta name="description" content="Адаптивная статья">
+    <meta name="Keywords" content="Технологии, блог, статья">
+    <link type="text/css" rel="stylesheet" href="./wt20.css" media="screen,projection" />
+    <link href="https://fonts.googleapis.com/css?family=Anton|Lato" rel="stylesheet">
+</head>
+
+<body>
+    <nav>
+        <div class="container">
+            <a href="#" class="logo">Vue.js Blog</a>
+            <button>Subscribe</button>
+        </div>
+    </nav>
+
+    <div class="container">
+
+        <div class="header">
+            <div class="authorImage">
+                <img src="./authorImage.png" alt="Avatar">
+            </div>
+            <div class="author">
+                Tony Spiro
+                <br> CEO & Co-Founder of
+                <a class="comicJS" href="https://cosmicjs.com">Cosmic JS</a>
+            </div>
+        </div>
+
+        <div class="article">
+            <h1>How to build a recipe app using Vue.js and Vuex</h1>
+            <p>In this tutorial, I’m going to show you how to create an elegant Recipe App using Vue2, Vuex, Vuetify and Cosmic
+                JS. For the sake of understanding how to consume Restful API’s, this tutorial will show how to make AJAX
+                (XHR) requests to the Cosmic JS API in order to retrieve, add, update, and delete data/media in our Cosmic
+                JS buckets. Let’s get started.
+                <a href="https://github.com/cosmicjs/recipe-app">Download the GitHub repo</a>
+            </p>
+
+            <img src="./image1.png" alt="Recipe App">
+
+            <h1>Prerequisites</h1>
+            <p>You’ll need Node JS and npm. Make sure you already have them before you start.
+
+            </p>
+
+            <h1>Getting Started</h1>
+            <p>
+                First of all, you have to be sure you have node > 6.x installed, than run the following commands:
+            </p>
+
+            <p>
+                <code>
+                    npm install -g vue-cli<br>
+                    cd recipe-app <br>
+                    npm install <br>
+                    npm run dev<br>
+                </code>
+            </p>
+
+            <p>Browser window will open automatically once you’ll run the last command.</p>
+
+            <h1>What we’re installing and why:</h1>
+            <p>
+                <ol>
+                    <li>We’re going to use vue and vuex libraries to create components and manage state.</li>
+                    <li>ing vue-router package to navigate between our components.</li>
+                    <li>We’re using vuetify package to create beautiful layouts using vue components.</li>
+                    <li>We’re going to use cosmicjs library to handle our requests to our Cosmic JS bucket.</li>
+                    <li>vue-wysiwyg is used for editor & vee-validate is used for form validation.</li>
+                </ol>
+            </p>
+
+            <h1>Vue Instance</h1>
+            <p>
+                <code>
+                    new Vue({<br>
+                    store,<br>
+                    el: '#app',<br>
+                    router,<br>
+                    render: h => h(App),<br>
+                    beforeMount: function(){<br>
+                    this.$store.dispatch<wbr>("getRecipes");<br>
+                    }<br>
+                    })<br>
+                    </code>
+            </p>
+
+            <p>Here Vue instance is created. el: '#app' is the id of the element from index.html where vue will be injecting
+                the app. store is vuex store. I will talk about vuex later. router is injecting router object. render: h
+                => h(App) is telling app to inject App component first in the App.
+            </p>
+
+            <h1>Setup App.vue</h1>
+            <p>
+                <code class="line">\src\App.js</code> is the first component that will render. I used vuetify components for UI and provided stylus for css. You
+                can check their documentation here. Most important code block here to include router view in the template.
+                This piece of code will render the router and respective components based on routes.</p>
+
+            <h1>Vuex</h1>
+            <p>Moving ahead first I discuss about Vuex and why we should use that. You can obviously use simple state and props
+                for smaller applications. But for large applications we must use some kind of state management like redux
+                in React. Vuex is maintained by vue team and it is widely used. Today we will that. Below is the Vuex flow
+                diagram that I will explain.</p>
+
+            <img src="./vuex.png" alt="Vuex">
+
+            <p>
+                <strong>State</strong> is where our whole application state/data will be store. So how it will work? For example,
+                you are using this store in you component and want to change some state value. You have to dispatch an action.
+                Then actionwill commit the mutation and it will change the state. So why action is needed, we can change
+                state directly in mutation. Action is very important. We need actions when we have to call any async function
+                and then on its success change the state. In case of API we consume request in actions and commit mutation
+                to change state. It is very simple but very import to follow.
+            </p>
+
+            <p>
+                <strong>Getters</strong> are simple getter function to get value of state in components. If you need one state value
+                in different components so it is better to create getter for it and use that getter in component as computed
+                property.
+            </p>
+
+            <p>
+                Information about the other two components you must find out yourself:)
+                <br>
+                <blockquote>You're never going to know enough, if you do not know more than enough.</blockquote>
+                <p>© William Blake</p>
+            </p>
+
+        </div>
+
+    </div>
+
+    <footer>
+        <div class="container">
+            © Vue.js Blog 2018
+        </div>
+    </footer>
+
+</body>
