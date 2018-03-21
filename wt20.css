@@ -70,9 +70,9 @@ body{
     font-family: 'Lato', sans-serif;
 }
 
-a:link {
+/* a:link {
     color: #64B587;
-}
+} */
 
 a:visited {
     color: lightgray;
@@ -239,6 +239,14 @@ footer{
     text-align: center;
     color: white;
     background-color: #64B587;
+}
+
+footer::first-letter {
+    color: rgba(69, 136, 98, 1);
+}
+
+code:first-line {
+    color: rgba(69, 136, 98, 1);
 }
 
 .container {
