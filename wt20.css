@@ -4,7 +4,7 @@
     src: url('https://fonts.googleapis.com/css?family=Overpass+Mono');
 }
 
-@media only screen and (max-width: 480px){
+@media screen and (min-device-width: 480px){
     h1{
         font-size: 38px; 
     }
@@ -16,35 +16,50 @@
     .article{
         padding: 10px;
     }
+
+    .container{
+        width: 90%;
+    }
 }
 
-@media only screen and (max-width: 640px){
+@media screen and (min-device-width: 640px){
     h1{
         font-size: 36px; 
     }
 
     p{
-        font-size: 24px;
+        font-size: 22px;
+    }
+    .container{
+        width: 80%;
     }
 }
 
-@media only screen and (max-width: 7680px){
-    h1{
-        font-size: 36px; 
-    }
-
-    p{
-        font-size: 24px;
-    }
-}
-
-@media only screen and (max-width: 1024px){
+@media screen and (min-device-width: 768px){
     h1{
         font-size: 34px; 
     }
 
     p{
-        font-size: 24px;
+        font-size: 20px;
+    }
+
+    .container{
+        width: 70%;
+    }
+}
+
+@media screen and (min-device-width: 1024px){
+    h1{
+        font-size: 33px; 
+    }
+
+    p{
+        font-size: 20px;
+    }
+
+    .container{
+        width: 80%;
     }
 }
 
@@ -54,7 +69,11 @@
     }
 
     p{
-        font-size: 22px;
+        font-size: 20px;
+    }
+
+    .container{
+        width: 50%;
     }
 }
 
@@ -70,9 +89,9 @@ body{
     font-family: 'Lato', sans-serif;
 }
 
-/* a:link {
-    color: #64B587;
-} */
+a:link {
+    color: black;
+}
 
 a:visited {
     color: lightgray;
@@ -253,5 +272,5 @@ code:first-line {
     min-width: 320px;
     width: 50%;
     margin: 0 auto;
-    max-width: 1024px;
+    max-width: 1240px;
 }
